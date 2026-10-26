@@ -1,0 +1,183 @@
+{
+  "agent": "study-planner-copilot",
+  "mode": "real_sdk",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "sdk_config": {
+    "system_prompt": "You are StudyPlannerAgent (OpenAI SDK). Keep answers short, use tools for memory updates, and highlight contradictions with saved preferences.",
+    "restricted_tools": [
+      "save_preference",
+      "add_course",
+      "plan_study_session",
+      "web_lookup",
+      "get_memory_snapshot"
+    ],
+    "strict_mcp_config": true,
+    "resume": "session_id",
+    "setting_sources": [
+      "project"
+    ]
+  },
+  "replacements": [
+    "# replaces: loop.py",
+    "# replaces: tools.py",
+    "# replaces: history.py",
+    "# replaces: memory.py",
+    "# replaces: context.py",
+    "# replaces: compaction.py",
+    "# replaces: caching.py",
+    "# replaces: tokens.py"
+  ],
+  "turns": [
+    {
+      "session_id": "session-1",
+      "user": "היי, תשמור העדפה שאני מעדיפה ללמוד בערב",
+      "assistant": "העדפה שלך לשעות לימוד בערב נשמרה.",
+      "tools_used": [
+        "save_preference"
+      ],
+      "usage": {
+        "input_tokens": 455,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 38,
+        "model_calls": 2,
+        "total_cost_usd": 0.002845
+      },
+      "latency_ms": 95
+    },
+    {
+      "session_id": "session-1",
+      "user": "תוסיף קורס אלגוריתמים עם 6 שעות שבועיות",
+      "assistant": "הקורס \"אלגוריתמים\" נוסף עם 6 שעות שבועיות.",
+      "tools_used": [
+        "add_course"
+      ],
+      "usage": {
+        "input_tokens": 540,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 40,
+        "model_calls": 2,
+        "total_cost_usd": 0.0033
+      },
+      "latency_ms": 95
+    },
+    {
+      "session_id": "session-1",
+      "user": "תתכנן לי מפגש לימוד ראשון למחר",
+      "assistant": "איזה קורס אתה רוצה לכלול במפגש הלימוד? כמה זמן אתה רוצה להקדיש לו?",
+      "tools_used": [],
+      "usage": {
+        "input_tokens": 202,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 25,
+        "model_calls": 1,
+        "total_cost_usd": 0.001385
+      },
+      "latency_ms": 80
+    },
+    {
+      "session_id": "session-1",
+      "user": "תחפש לי משאב קצר על Pomodoro בויקיפדיה",
+      "assistant": "מצאתי מידע קצר על \"Pomodoro\" בויקיפדיה. המונח מתייחס למספר דברים, כולל פסלים איטלקיים כמו ארנלדו וג'ו פומודורו, מנות אוכל כמו פאפא אל פומודורו ופסטה אל פומודורו. \n\nלקריאה נוספת, תוכל לבקר בקישור: [Pomodoro - Wikipedia](https://en.wikipedia.org/wiki/Pomodoro).",
+      "tools_used": [
+        "web_lookup"
+      ],
+      "usage": {
+        "input_tokens": 545,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 113,
+        "model_calls": 2,
+        "total_cost_usd": 0.00442
+      },
+      "latency_ms": 95
+    },
+    {
+      "session_id": "session-2",
+      "user": "מה אתה זוכר עליי מהסשן הקודם?",
+      "assistant": "אני זוכר שהעדפת ללמוד בערב. הוספת גם קורס על אלגוריתמים, אבל אין כרגע שעות לימוד מתוכננות. האם יש משהו נוסף שתרצה להוסיף או לשנות?",
+      "tools_used": [
+        "get_memory_snapshot"
+      ],
+      "usage": {
+        "input_tokens": 606,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 64,
+        "model_calls": 2,
+        "total_cost_usd": 0.00399
+      },
+      "latency_ms": 95
+    },
+    {
+      "session_id": "session-2",
+      "user": "אני בעצם רוצה ללמוד רק בבוקר מעכשיו, תשמור",
+      "assistant": "שמרתי את ההעדפה שלך ללמוד רק בבוקר.",
+      "tools_used": [
+        "save_preference"
+      ],
+      "usage": {
+        "input_tokens": 451,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 37,
+        "model_calls": 2,
+        "total_cost_usd": 0.00281
+      },
+      "latency_ms": 95
+    },
+    {
+      "session_id": "session-2",
+      "user": "תוודא אם זה סותר משהו ששמרנו ותעדכן בהתאם",
+      "assistant": "אני צריך לדעת מה המידע או ההעדפות שברצונך לבדוק כדי לוודא אם יש סתירות. אנא ספק פרטים נוספים.",
+      "tools_used": [],
+      "usage": {
+        "input_tokens": 205,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 35,
+        "model_calls": 1,
+        "total_cost_usd": 0.00155
+      },
+      "latency_ms": 80
+    }
+  ],
+  "checks": [
+    {
+      "id": "pref-updated",
+      "passed": true,
+      "detail": "actual=morning, expected=morning"
+    },
+    {
+      "id": "course-exists",
+      "passed": true,
+      "detail": "count=1, min=1"
+    },
+    {
+      "id": "resource-saved",
+      "passed": true,
+      "detail": "decisions=4"
+    },
+    {
+      "id": "external-tool-used",
+      "passed": true,
+      "detail": "tools=['save_preference', 'add_course', 'web_lookup', 'get_memory_snapshot', 'save_preference']"
+    },
+    {
+      "id": "pref-changed",
+      "passed": true,
+      "detail": "has_from=True, has_to=True, current=morning"
+    }
+  ],
+  "harness_loc": {
+    "__init__.py": 1,
+    "agent.py": 174,
+    "main.py": 179,
+    "tools.py": 21
+  },
+  "generated_at": "2026-10-26T13:32:27.463107+00:00",
+  "notes": "# replaces: loop.py -> SDK query/response flow; # replaces: compaction.py and # replaces: caching.py -> managed by SDK runtime"
+}

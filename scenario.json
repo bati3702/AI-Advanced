@@ -1,0 +1,52 @@
+{
+  "agent_name": "study-planner-copilot",
+  "sessions": [
+    {
+      "session_id": "session-1",
+      "turns": [
+        "היי, תשמור העדפה שאני מעדיפה ללמוד בערב",
+        "תוסיף קורס אלגוריתמים עם 6 שעות שבועיות",
+        "תתכנן לי מפגש לימוד ראשון למחר",
+        "תחפש לי משאב קצר על Pomodoro בויקיפדיה"
+      ]
+    },
+    {
+      "session_id": "session-2",
+      "turns": [
+        "מה אתה זוכר עליי מהסשן הקודם?",
+        "אני בעצם רוצה ללמוד רק בבוקר מעכשיו, תשמור",
+        "תוודא אם זה סותר משהו ששמרנו ותעדכן בהתאם"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "pref-updated",
+      "type": "state_pref_equals",
+      "key": "preferred_study_time",
+      "value": "morning"
+    },
+    {
+      "id": "course-exists",
+      "type": "state_courses_min",
+      "min_count": 1
+    },
+    {
+      "id": "resource-saved",
+      "type": "state_decision_exists",
+      "title": "resource_lookup"
+    },
+    {
+      "id": "external-tool-used",
+      "type": "tools_used_contains",
+      "tool": "web_lookup"
+    },
+    {
+      "id": "pref-changed",
+      "type": "state_pref_changed",
+      "key": "preferred_study_time",
+      "from": "evening",
+      "to": "morning"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{"role": "user", "content": "היי, תשמור העדפה שאני מעדיפה ללמוד בערב"}
+{"role": "assistant", "content": [{"type": "tool_use", "id": "toolu_1", "name": "save_preference", "input": {"key": "preferred_study_time", "value": "evening"}}]}
+{"role": "user", "content": [{"type": "tool_result", "tool_name": "save_preference", "is_error": false, "content": {"saved": {"preferred_study_time": "evening"}}, "tool_use_id": "toolu_1"}]}
+{"role": "assistant", "content": [{"type": "text", "text": "Done. Based on your request 'היי, תשמור העדפה שאני מעדיפה ללמוד בערב', I used tools and updated memory safely."}]}
+{"role": "user", "content": "תוסיף קורס אלגוריתמים עם 6 שעות שבועיות"}
+{"role": "assistant", "content": [{"type": "tool_use", "id": "toolu_3", "name": "add_course", "input": {"name": "Algorithms", "weekly_hours": 6}}]}
+{"role": "user", "content": [{"type": "tool_result", "tool_name": "add_course", "is_error": false, "content": {"course": {"name": "Algorithms", "weekly_hours": 6.0, "created_at": "2026-10-26T13:34:18.107035+00:00"}, "all_courses": [{"name": "Algorithms", "weekly_hours": 6.0, "created_at": "2026-10-26T13:34:18.107035+00:00"}], "all_courses_count": 1}, "tool_use_id": "toolu_3"}]}
+{"role": "assistant", "content": [{"type": "text", "text": "Done. Based on your request 'תוסיף קורס אלגוריתמים עם 6 שעות שבועיות', I used tools and updated memory safely."}]}
+{"role": "user", "content": "תתכנן לי מפגש לימוד ראשון למחר"}
+{"role": "assistant", "content": [{"type": "tool_use", "id": "toolu_5", "name": "plan_study_session", "input": {"course": "Algorithms", "duration_min": 90, "date": "2026-10-27"}}]}
+{"role": "user", "content": [{"type": "tool_result", "tool_name": "plan_study_session", "is_error": false, "content": {"session": {"course": "Algorithms", "duration_min": 90, "date": "2026-10-27", "created_at": "2026-10-26T13:34:18.150260+00:00"}, "sessions": [{"course": "Algorithms", "duration_min": 90, "date": "2026-10-27", "created_at": "2026-10-26T13:34:18.150260+00:00"}], "sessions_count": 1}, "tool_use_id": "toolu_5"}]}
+{"role": "assistant", "content": [{"type": "text", "text": "Done. Based on your request 'תתכנן לי מפגש לימוד ראשון למחר', I used tools and updated memory safely."}]}
+{"role": "user", "content": "תחפש לי משאב קצר על Pomodoro בויקיפדיה"}
+{"role": "assistant", "content": [{"type": "tool_use", "id": "toolu_7", "name": "web_lookup", "input": {"query": "Pomodoro Technique"}}]}
+{"role": "user", "content": [{"type": "tool_result", "tool_name": "web_lookup", "is_error": false, "content": {"title": "Pomodoro Technique", "extract": "The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a kitchen timer to break work into intervals, typically 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for tomato, after the tomato-shaped kitchen ti", "url": "https://en.wikipedia.org/wiki/Pomodoro_Technique"}, "tool_use_id": "toolu_7"}]}
+{"role": "assistant", "content": [{"type": "text", "text": "Done. Based on your request 'תחפש לי משאב קצר על Pomodoro בויקיפדיה', I used tools and updated memory safely."}]}

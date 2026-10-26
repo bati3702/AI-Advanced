@@ -1,0 +1,164 @@
+{
+  "agent": "study-planner-copilot",
+  "mode": "real_api",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "effort": "medium",
+  "turns": [
+    {
+      "user": "היי, תשמור העדפה שאני מעדיפה ללמוד בערב",
+      "assistant": "העדפה שלך לשעות הלימוד בערב נשמרה.",
+      "tools_used": [
+        "save_preference"
+      ],
+      "usage": {
+        "input_tokens": 531,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 39,
+        "model_calls": 2,
+        "total_cost_usd": 0.01089
+      },
+      "latency_ms": 4319,
+      "session_id": "session-1"
+    },
+    {
+      "user": "תוסיף קורס אלגוריתמים עם 6 שעות שבועיות",
+      "assistant": "הקורס \"אלגוריתמים\" עם 6 שעות שבועיות נוסף בהצלחה.",
+      "tools_used": [
+        "add_course"
+      ],
+      "usage": {
+        "input_tokens": 888,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 42,
+        "model_calls": 2,
+        "total_cost_usd": 0.01647
+      },
+      "latency_ms": 2230,
+      "session_id": "session-1"
+    },
+    {
+      "user": "תתכנן לי מפגש לימוד ראשון למחר",
+      "assistant": "מפגש הלימוד הראשון שלך לקורס \"אלגוריתמים\" מתוכנן למחר, למשך 60 דקות.",
+      "tools_used": [
+        "plan_study_session"
+      ],
+      "usage": {
+        "input_tokens": 1427,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 61,
+        "model_calls": 2,
+        "total_cost_usd": 0.02598
+      },
+      "latency_ms": 2360,
+      "session_id": "session-1"
+    },
+    {
+      "user": "תחפש לי משאב קצר על Pomodoro בויקיפדיה",
+      "assistant": "מצאתי מידע על \"Pomodoro\" בויקיפדיה. זה מתייחס למספר דברים, כולל:\n\n- ארנלדו פומודורו, פסל איטלקי\n- פאפא אל פומודורו, מנה איטלקית\n- פסטה אל פומודורו\n\nלקריאה נוספת, תוכל לבקר בקישור: [Pomodoro - Wikipedia](https://en.wikipedia.org/wiki/Pomodoro).",
+      "tools_used": [
+        "web_lookup"
+      ],
+      "usage": {
+        "input_tokens": 2017,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 113,
+        "model_calls": 2,
+        "total_cost_usd": 0.03873
+      },
+      "latency_ms": 3611,
+      "session_id": "session-1"
+    },
+    {
+      "user": "מה אתה זוכר עליי מהסשן הקודם?",
+      "assistant": "אני זוכר שהעדפת את זמן הלימוד שלך בערב. יש לך קורס בשם \"אלגוריתמים\" עם יעד של 6 שעות שבועיות. לאחרונה תכננת סשן לימוד של 60 דקות לקורס זה בתאריך 27 באוקטובר.",
+      "tools_used": [],
+      "usage": {
+        "input_tokens": 514,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 61,
+        "model_calls": 1,
+        "total_cost_usd": 0.012285
+      },
+      "latency_ms": 1431,
+      "session_id": "session-2"
+    },
+    {
+      "user": "אני בעצם רוצה ללמוד רק בבוקר מעכשיו, תשמור",
+      "assistant": "זה סותר את ההעדפה הקודמת שלך ללימוד בערב. האם אתה מאשר לשנות את ההעדפה ללימוד בבוקר?",
+      "tools_used": [],
+      "usage": {
+        "input_tokens": 595,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 34,
+        "model_calls": 1,
+        "total_cost_usd": 0.011475
+      },
+      "latency_ms": 1016,
+      "session_id": "session-2"
+    },
+    {
+      "user": "תוודא אם זה סותר משהו ששמרנו ותעדכן בהתאם",
+      "assistant": "שמרתי את ההעדפה שלך ללימוד בבוקר.",
+      "tools_used": [
+        "get_memory_snapshot",
+        "save_preference"
+      ],
+      "usage": {
+        "input_tokens": 2486,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 53,
+        "model_calls": 3,
+        "total_cost_usd": 0.041265
+      },
+      "latency_ms": 2834,
+      "session_id": "session-2"
+    }
+  ],
+  "checks": [
+    {
+      "id": "pref-updated",
+      "passed": true,
+      "detail": "actual=morning, expected=morning"
+    },
+    {
+      "id": "course-exists",
+      "passed": true,
+      "detail": "count=1, min=1"
+    },
+    {
+      "id": "resource-saved",
+      "passed": true,
+      "detail": "decisions=5"
+    },
+    {
+      "id": "external-tool-used",
+      "passed": true,
+      "detail": "tools=['save_preference', 'add_course', 'plan_study_session', 'web_lookup', 'get_memory_snapshot', 'save_preference']"
+    },
+    {
+      "id": "pref-changed",
+      "passed": true,
+      "detail": "has_from=True, has_to=True, current=morning"
+    }
+  ],
+  "harness_loc": {
+    "__init__.py": 1,
+    "caching.py": 21,
+    "compaction.py": 20,
+    "context.py": 35,
+    "history.py": 28,
+    "loop.py": 94,
+    "memory.py": 15,
+    "tokens.py": 64,
+    "tools.py": 29
+  },
+  "generated_at": "2026-10-26T13:32:01.063411+00:00"
+}
